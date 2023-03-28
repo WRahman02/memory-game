@@ -1,0 +1,19 @@
+.card{
+    position: relative;
+    align-items: center;
+}
+
+.card img{
+    width: 100%;
+    display: block;
+    border: 5px solid #FFC900;
+    border-radius: 6px;
+}
+
+.card.face {
+    transform: rotateY(90deg);
+    position: absolute
+}
+.flipped.card.face{
+    transform: rotateY(90deg);
+}
