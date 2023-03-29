@@ -17,7 +17,7 @@ function App() {
   const [firstChoice, setFirstChoice] = useState(null)
   const [secondChoice, setSecondChoice] = useState(null)
   const [numPairs, setPairs] = useState(0)
-  const [disabled, setDisabled] = useState (false)
+  //const [disabled, setDisabled] = useState (false)
 
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
@@ -39,7 +39,7 @@ function App() {
     
     if (firstChoice && secondChoice)
     {
-      setDisabled(true)
+      //setDisabled(true)
       if (firstChoice.src === secondChoice.src)
       {
         setCards (prevCards => {
@@ -99,7 +99,7 @@ function App() {
           card={card} 
           handleChoice ={handleChoice}
           flipped={card === firstChoice || card === secondChoice || card.match}
-          disabled = {disabled}
+          //disabled = {disabled}
           />
         ))}
       </div>
