@@ -4,16 +4,21 @@
 }
 
 .card img{
-    width: 100%;
+    max-width: 90%;
+    max-height: 90%;
     display: block;
     border: 5px solid #FFC900;
     border-radius: 6px;
 }
 
-.card.face {
+.card .face {
     transform: rotateY(90deg);
-    position: absolute
+    position: absolute;
 }
-.flipped.card.face{
-    transform: rotateY(90deg);
+.flipped .face{
+    transform: rotateY(0deg);
+}
+
+.flipped .back{
+    opacity: 0;
 }

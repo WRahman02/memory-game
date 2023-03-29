@@ -16,6 +16,7 @@ function App() {
   const [turns, setTurns] = useState(0)
   const [firstChoice, setFirstChoice] = useState(null)
   const [secondChoice, setSecondChoice] = useState(null)
+  const [numPairs, setPairs] = useState(0)
   const [disabled, setDisabled] = useState (false)
 
   const shuffleCards = () => {
@@ -27,6 +28,7 @@ function App() {
     setSecondChoice(null)
     setCards(shuffledCards)
     setTurns(0)
+    setPairs(0)
   }
   console.log(cards,turns)
 
@@ -52,11 +54,13 @@ function App() {
             }
           })
         })
+        setPairs(numPairs+1)
+        resetTurns()
       }
       else
       {
         console.log('not a match')
-        resetTurns()
+        setTimeout(() => resetTurns(), 500)
       }
     }
   }, [firstChoice, secondChoice])
@@ -67,6 +71,19 @@ function App() {
     setTurns(prevTurns => prevTurns+1)
     setDisabled (false)
   }
+
+  //win message
+  useEffect(() => {
+    if (numPairs === 6)
+    {
+      const vicroy = `you won in ${turns} turns.`;
+      if(window.confirm(vicroy))
+      {
+        shuffleCards();
+      }
+    }
+  }, [turns,numPairs])
+
   useEffect (() => {
     shuffleCards()
   }, [])
@@ -74,6 +91,7 @@ function App() {
     <div className="App">
       <h1>Memory Game</h1>
       <button onClick={shuffleCards}>restart</button>
+      <p>Turns: {turns}</p>
       <div className='card-array'>
         {cards.map(card => (
           <Card 
@@ -85,7 +103,7 @@ function App() {
           />
         ))}
       </div>
-      <p>Turns: {turns}</p>
+      
     </div>
   );
 }
