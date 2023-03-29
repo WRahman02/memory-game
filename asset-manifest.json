@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/WD-Assignment-2/static/css/main.949b185e.css",
+    "main.js": "/WD-Assignment-2/static/js/main.63e99cc4.js",
+    "index.html": "/WD-Assignment-2/index.html",
+    "main.949b185e.css.map": "/WD-Assignment-2/static/css/main.949b185e.css.map",
+    "main.63e99cc4.js.map": "/WD-Assignment-2/static/js/main.63e99cc4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.949b185e.css",
+    "static/js/main.63e99cc4.js"
+  ]
+}
